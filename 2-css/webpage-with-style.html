@@ -9,14 +9,14 @@
 			
 			h1 {
 			
-				color:pink;
+				color:black;
 				background-color:yellow
 			
 			}
 			
 			.yellow {
 			
-				color:yellow;
+				color:#A9F5A9;
 			}
 			
 			.large {
@@ -27,7 +27,7 @@
 			#green {
 			
 				color:green;
-				background-color:yellow
+				background-color:#A9F5A9
 			}
 			
 			.underlined {
@@ -38,17 +38,63 @@
 			#first-section {
 			
 				color:blue;
-				background-color:pink;
-				width:500px;
+				background-color:#088A68;
+				width:200px;
+				float:left;
 			}
 			
 			#second-section {
 			
-				background-color:orange;
+				background-color:#4285F4;
+				width:200px;
+				float:right;
 				
 			}
+			
+			.clear-float {
+			
+				clear:both;
+			}
 		
-		
+			#third-section {
+			
+				background-color:#4285F4;
+				width:200px;
+				position:relative;
+				left:150px;
+				top:10px;
+				z-index:2;
+				opacity:0.5;
+				
+			}
+			
+			#fourth-section {
+			
+				background-color:pink;
+				width:200px;
+				position:relative;
+				left:100px;
+				top:-50px;
+				z-index:1;
+			}
+			
+			#fifth-section {
+			
+				background-color:#4285F4;
+				width:200px;
+				position:fixed;
+				height:100px;
+			}
+			
+			#sixth-section {
+			
+				background-color:pink;
+				width:200px;
+				position:absolute;
+				left:100px;
+				top:100px;
+			}
+			
 		</style>
 		
 	</head>
@@ -62,17 +108,6 @@
 			<p>Wow, Tang Yu Ching is cute</p>
 		
 		</div>
-	
-		<p class="yellow">Tang Yu Ching is naughty</p>
-		
-		<p class="yellow large">Tang Yu Ching is naughty</p>
-	
-		<h2 id="green">Tang Yu Ching. <span class="underlined">And this text is
-		underlined</span></h2>
-		
-		<p>Wow, Tang Yu Ching is cute</p>
-		
-		<h1>CSS is cool!</h1>
 		
 		<div id="second-section">
 		
@@ -81,11 +116,55 @@
 			<p>Tang Yu Ching is cool!</p>
 			
 		</div>
-	
-		<p style="color:blue;font-size:200%">Tang Yu Ching</p>
 		
-		<h1 style="color:green;font-size:250%">CSS is cool!</h1>
+		<div class="clear-float">
 	
+			<p class="yellow">Tang Yu Ching is naughty</p>
+		
+			<p class="yellow large">Tang Yu Ching is naughty</p>
+		
+		</div>
+		
+		<h2 id="green">Tang Yu Ching. <span class="underlined">And this text is
+		underlined</span></h2>
+		
+		<p>Wow, Tang Yu Ching is cute</p>
+		
+		<h1>CSS is cool!</h1>
+		
+		<div id="third-section">
+		
+			<p style="color:blue;font-size:200%">Tang Yu Ching</p>
+		
+			<h1 style="color:green;font-size:250%">CSS is cool!</h1>
+		
+		</div>
+		
+		<div id="fourth-section">
+		
+		</p>This paragrath is floated</p>
+		
+		</div>
+		
+		<div id="fifth-section">
+		
+		<h1>Alice in the Wonderland</h1>
+		
+		</div>
+		
+		<div id="sixth-section">
+		
+		<h1>Yu Ching in the Disneyland</h1>
+		
+		</div>
+		
+		<div class="clear-float">
+		
+		<h1>Lord of the Ring</h1>
+		
+		</div>
+		
+		
 	</body>
 	
 </html>
