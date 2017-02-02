@@ -1,0 +1,37 @@
+<html>
+
+	<head>
+	
+		<title>Javascript</title>
+		
+		
+		
+		
+		
+	</head>
+	
+	<body>
+		
+		<input id="textInput" type="text"></input>
+		
+		<button id="textChanger">Change the text!</button>
+		
+		<p id="firstText">This is so awesome</p>
+		
+		<script type="text/javascript">
+		
+			document.getElementById("textChanger").onclick = function() {
+			
+				var textEntered = "";
+				
+				textEntered = document.getElementById("textInput").value;
+				
+				document.getElementById("firstText").innerHTML = textEntered;
+			
+			}
+		
+		</script>
+	
+	</body>
+	
+</html>
