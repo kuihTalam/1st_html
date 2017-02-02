@@ -1,0 +1,113 @@
+<html>
+
+	<head>
+	
+		<title>Reaction Timer</title>
+		
+		<style type="text/css">
+		
+			.font-family {
+			
+				font-family:Arial;
+			}
+		
+			h1 {
+			
+				font-weight:bold;
+			
+			}
+			
+			h2 {
+			
+				float:left;
+				
+			}
+			
+			.circle-shape {
+			
+				border-radius:50%;
+				height:100px;
+				width:100px;
+				float:left;
+			
+			}
+			
+			#red {
+			
+				background-color:red;
+			
+			}
+			
+			#reactionTime {
+			
+				float:left;
+				font-size:22px;
+				font-weight:bold;
+				position:relative;
+				top:2px;
+				padding-left:3px;
+			}
+			
+			#your-time {
+			
+				float:left;
+				position:relative;
+				top:-20px;
+			
+			}
+			
+			.clear {
+			
+				clear:both;
+			}
+
+		</style>
+	</head>
+	
+	<body>
+		
+		<h1 class="font-family">Test Your Reactions!</h1>
+		
+		<h3 class="font-family">Click on the boxes and circles as quickly as you can!</h3>
+		
+		<h2 class="font-family" id="your-time">Your time:</h2>
+		
+		<div id="reactionTime" class="font-family"></div>
+		
+		<div class="clear"></div>
+		
+		<div class="circle-shape" id="red"></div>
+		
+		
+		
+		
+		<script type="text/javascript">
+		
+			
+			
+			var t0 = performance.now();	
+			
+			document.getElementById("red").onclick = function() {
+				
+				document.getElementById("red").style.display = "none";
+				var t1 = performance.now();
+				timeTaken = ((t1 - t0) / 1000).toFixed(3);
+				document.getElementById("reactionTime").innerHTML = timeTaken + "s";
+				
+				}
+					
+			
+			
+			
+		
+			
+			
+			
+			
+	
+		
+		</script>
+	
+	</body>
+	
+</html>
