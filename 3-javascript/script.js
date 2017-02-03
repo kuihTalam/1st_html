@@ -1,68 +1,7 @@
-<html>
-
-	<head>
-	
-		<title>Reaction Timer</title>
-		
-		<style type="text/css">
-		
-			.font-family {
-			
-				font-family:Arial;
-			}
-		
-			h1 {
-			
-				font-weight:bold;
-			
-			}
-			
-			h2 {
-			
-				float:left;
-				
-			}
-			
-			#shape {
-			
-				height:100px;
-				width:100px;
-				display:none;
-				position:relative;
-				
-			}	
-			
-			
-			#your-time {
-			
-				float:left;
-				position:relative;
-				top:-20px;
-				font-weight:bold;
-			
-			}
-			
-
-		</style>
-	</head>
-	
-	<body>
-		
-		<h1 class="font-family">Test Your Reactions!</h1>
-		
-		<h3 class="font-family">Click on the boxes and circles as quickly as you can!</h3>
-		
-		<p class="font-family" id="your-time">Your time: <span id="timeTaken"></span></p>
-		
-		<div id="shape"></div>	
-		
-		<script type="text/javascript">
-		
 			var t0 = performance.now();
 			
 			
-			<!-- This is to generate random color. It works by select all possible charset from color code and split into a list. Then randomly choose the charset and append it.
-	-->
+			// This is to generate random color. It works by select all possible charset from color code and split into a list. Then randomly choose the charset and append it.
 			
 			function getRandomColor() {
 				var letters = '0123456789ABCDEF'.split('');
@@ -78,7 +17,7 @@
 				return color;
 			}
 			
-			<!--Randomly select the top, left, width (height is equal width so that it makes a perfect shape) -->
+			// Randomly select the top, left, width (height is equal width so that it makes a perfect shape)
 			
 			function makeShapeAppear() {
 				
@@ -114,7 +53,7 @@
 				
 			}
 			
-			<!-- Below function is to make the set reappear randomly from 0s to 2s  -->
+			// Below function is to make the set reappear randomly from 0s to 2s
 			
 			function delayTimer() {
 				
@@ -122,7 +61,7 @@
 				
 			}
 			
-			<!-- Below function is to start the delayTimer()function, then the counter starts, click, counter stops and calculate the time difference and show it  -->
+			// Below function is to start the delayTimer()function, then the counter starts, click, counter stops and calculate the time difference and show it
 			
 			delayTimer();
 			
@@ -139,9 +78,3 @@
 				delayTimer();
 				
 			}
-		
-		</script>
-	
-	</body>
-	
-</html>

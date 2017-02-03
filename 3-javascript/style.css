@@ -1,0 +1,35 @@
+			.font-family {
+			
+				font-family:Arial;
+			}
+		
+			h1 {
+			
+				font-weight:bold;
+			
+			}
+			
+			h2 {
+			
+				float:left;
+				
+			}
+			
+			#shape {
+			
+				height:100px;
+				width:100px;
+				display:none;
+				position:relative;
+				
+			}	
+			
+			
+			#your-time {
+			
+				float:left;
+				position:relative;
+				top:-20px;
+				font-weight:bold;
+			
+			}
