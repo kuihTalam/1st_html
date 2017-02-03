@@ -44,7 +44,11 @@
 		
 			$("div").click(function() {
 			
-				$(this).fadeOut();
+				$(this).fadeOut("slow", function() {
+				
+					alert("FadeOut has finished!")
+				
+				});  // hide() is the same as display=none
 			
 			
 			});
