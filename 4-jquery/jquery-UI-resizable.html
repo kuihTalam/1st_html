@@ -1,0 +1,67 @@
+<html>
+
+	<head>
+	
+		<title>jQuery UI Draggable - Default functionality</title>
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+		
+		<script src="jquery-ui/jquery-ui.js"></script>
+		
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		
+		<style type="text/css">
+			
+			#resizable, #also {
+			
+				width: 100px;
+				height: 100px;
+				background-color:red;
+			}
+		
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		
+		<div id="resizable">
+		
+			Resizable
+			
+		</div>
+		
+		<div id="also" style="background-color:yellow;">
+		
+			will also resize
+		
+		</div>
+		
+		
+		<script type="text/javascript">
+				
+				$("#resizable").resizable({
+					
+					alsoResize:"#also",
+					grid:50,
+					resize: function( event, ui ) {
+					
+						if ($("#resizable").width() > 300) {
+						
+							alert("Big enough!")
+						
+						}
+					
+					}
+				});
+				
+				$("#also").resizable();
+		
+		</script>
+		
+		
+	
+	</body>
+	
+</html>

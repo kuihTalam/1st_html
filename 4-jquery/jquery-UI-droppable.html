@@ -1,0 +1,71 @@
+<html>
+
+	<head>
+	
+		<title>jQuery UI Draggable - Default functionality</title>
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+		
+		<script src="jquery-ui/jquery-ui.js"></script>
+		
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		
+		<style type="text/css">
+			
+			#smallSquare {
+			
+				width: 100px;
+				height: 100px;
+				background-color:red;
+				
+			}
+			
+			#bigSquare {
+			
+				width: 500px;
+				height: 500px;
+				background-color:yellow;
+				
+			}
+		
+		</style>
+		
+	</head>
+	
+	<body>
+		
+		
+		<div id="smallSquare">
+		
+			Drag me to target
+			
+		</div>
+		
+		<div id="bigSquare">
+		
+			Drop here
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+		
+			$( "#smallSquare" ).draggable();
+			
+			$( "#bigSquare" ).droppable({
+			
+				drop: function( event, ui ) {
+				
+					alert("Dropped");
+				
+				}
+			
+			});
+		
+		</script>
+		
+		
+	
+	</body>
+	
+</html>

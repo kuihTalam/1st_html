@@ -1,0 +1,44 @@
+<html>
+
+	<head>
+	
+		<title>jQuery UI Draggable - Default functionality</title>
+
+		<script type="text/javascript" src="jquery.min.js"></script>
+		
+		<script src="jquery-ui/jquery-ui.js"></script>
+		
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		
+		
+	</head>
+	
+	<body>
+		
+		<div id="draggable"><p>Up and Down only</p></div>
+		
+		<div id="draggable2"><p>Left and Right only</p></div>
+		
+		<div style="width:400px;height:300px;background-color:yellow;">
+			
+				<span>In the box only</span> <!-- if <p> is able to drag up and down as <p> stretch to the end -->
+			
+		</div>
+			
+			
+		
+		<script type="text/javascript">
+		
+				$( "#draggable" ).draggable({ axis: "y" });
+				
+				$( "#draggable2" ).draggable({ axis: "x" });
+				
+				$( "span" ).draggable({ containment: "parent" });
+		
+		</script>
+		
+		
+	
+	</body>
+	
+</html>

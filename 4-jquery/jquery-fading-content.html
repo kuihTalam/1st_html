@@ -8,51 +8,63 @@
 		
 		<style type="text/css">
 		
-			#circle {
+			#fadingIn {
 			
-				background-color:green;
-				height:100px;
-				width:100px;
-				border-radius:50%;
-				margin:10px;
-			
+				display:none;
+				
 			}
-			
-			.square {
-			
-				background-color:red;
-				height:100px;
-				width:100px;
-				margin:10px;
-			
-			}
-			
-		
+	
 		</style>
-		
 	</head>
 	
 	<body>
 	
-			<div id="circle"></div>
+			<p id="text">Now you don't see, now you see</p>
 			
-			<div class="square"></div>
+			<p id="secondText">Writing my first words</p>
 			
-			<div class="square"></div>
+			<button id="toggle">Toggle Text</button>
+			
+			<button id="secondToggle">Another Toggle</button>
 		
 		<script type="text/javascript">
 		
-			$("div").click(function() {
+			$("#toggle").click(function() {
 			
-				$(this).fadeOut("slow", function() {
+				if ($("#text").css("display") == "none") {
+			
+					$("#text").fadeIn();
 				
-					alert("FadeOut has finished!")
+				} else {
 				
-				});  // hide() is the same as display=none
-			
-			
+					$("#text").fadeOut();
+					
+				}
 			});
 			
+			var textShowing = true;
+			
+			$("#secondToggle").click(function() {
+			
+				if (textShowing) {
+				
+					$("#secondText").fadeOut(function() {
+					
+						textShowing = false;
+					
+					});
+				
+				} else {
+				
+					$("#secondText").fadeIn(function() {
+					
+						textShowing = true;
+					
+					});
+				
+				}
+	
+			});
 			
 		
 		</script>
