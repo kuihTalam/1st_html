@@ -41,7 +41,7 @@
 			#buttonContainer {
 			
 				width:233px;
-				margin:0 auto;
+				margin:0 auto;  <!-- 'margin:0 auto;' is to make to buttonContainer appear in the middle of the page -->
 			
 			}
 			
@@ -156,18 +156,23 @@
 		
 		<div id="bodyContainer">
 		
-			<textarea id="htmlPanel" class="panel"><p id="paragraph">Hello World</p></textarea>
+			<textarea id="htmlPanel" class="panel"><p id="paragraph">Hello World</p></textarea> <!-- Use 'textarea' to create text box -->
 			
 			<textarea id="cssPanel" class="panel hidden">p { color:green; }</textarea>
 			
 			<textarea id="javascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = "Alice in JavaLand";</textarea>
 			
-			<iframe id="outputPanel" class="panel"></iframe>
+			<iframe id="outputPanel" class="panel"></iframe> <!-- Use 'iframe' to create a html environment within the html --> 
 		
 		</div>
 		
 		<script type="text/javascript">
 		
+		// 'updateOutput()' function is used to create a html structure inside the iframe. It will grab the contents inside the <textarea>
+		// from 'css' and 'html' and put it on iframe.
+		
+		// For javascript, it is using the 'eval' method to run the content of javascript. For the security reason, it is best to split out 
+		// the javascript 		
 			function updateOutput() {
 			
 				$("iframe").contents().find("html").html("<html><head><style type='text/css'>" +
@@ -175,9 +180,10 @@
 				
 				document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
 			
-				
-				
 			}
+			
+		// When the mouse hover over the button, it will pull in the 'highlightedColor' class and remove it when the mouse leaves.
+		// The purpose is to let the button return to the original color when the mouse leaves.
 		
 			$(".toggleButton").hover(function() {
 			
@@ -191,29 +197,29 @@
 			
 			$(".toggleButton").click(function() {
 			
-				$(this).toggleClass("active");
+				$(this).toggleClass("active");		// change the 'html' and 'output' button color
 				
-				$(this).removeClass("highlightedColor");
+				$(this).removeClass("highlightedColor"); // change the color of the button once the clicking is done
 				
 				var panelId = $(this).attr("id") + "Panel";
 				
-				$("#" + panelId).toggleClass("hidden"); // can use .toggle() also
+				$("#" + panelId).toggleClass("hidden"); // can use .toggle() also. Toggle to display the panel.
 				
 				var numOfActivePanels =  4 - $(".hidden").length;
 				
-				$(".panel").width( ($(window).width() / numOfActivePanels) - 10);
+				$(".panel").width( ($(window).width() / numOfActivePanels) - 10); //adjust the panel length based on active panels.
 			
 			});
 			
-			$(".panel").height( $(window).height() - $("#header").height() - 15 );
+			$(".panel").height( $(window).height() - $("#header").height() - 15 ); // default height for the page
 			
-			$(".panel").width( ($(window).width() / 2) - 10);
+			$(".panel").width( ($(window).width() / 2) - 10); // default width for the page
 			
-			$("iframe").contents().find("html").html($("#htmlPanel").val());
+			$("iframe").contents().find("html").html($("#htmlPanel").val()); // default iframe setting
 			
 			updateOutput();
 			
-			$("textarea").on('change keyup paste', function() {
+			$("textarea").on('change keyup paste', function() { // live update function when there is any change/keyup/paste occurs in the panel.
 			
 				updateOutput();
 			
